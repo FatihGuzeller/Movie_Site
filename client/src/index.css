@@ -1,0 +1,360 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+/* Custom scrollbar for chat */
+.chat-scrollbar::-webkit-scrollbar {
+  width: 4px;
+}
+
+@media (min-width: 640px) {
+  .chat-scrollbar::-webkit-scrollbar {
+    width: 6px;
+  }
+}
+
+.chat-scrollbar::-webkit-scrollbar-track {
+  background: rgba(55, 65, 81, 0.3);
+  border-radius: 2px;
+}
+
+@media (min-width: 640px) {
+  .chat-scrollbar::-webkit-scrollbar-track {
+    border-radius: 3px;
+  }
+}
+
+.chat-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(107, 114, 128, 0.5);
+  border-radius: 2px;
+  transition: background 0.2s ease;
+}
+
+@media (min-width: 640px) {
+  .chat-scrollbar::-webkit-scrollbar-thumb {
+    border-radius: 3px;
+  }
+}
+
+.chat-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(156, 163, 175, 0.7);
+}
+
+/* Video player custom styles */
+.video-container {
+  position: relative;
+  background: #000;
+  border-radius: 0;
+  overflow: hidden;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+}
+
+@media (min-width: 640px) {
+  .video-container {
+    border-radius: 12px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  }
+}
+
+.video-container:hover .video-controls {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.video-controls {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Progress bar hover effect */
+.progress-bar:hover .progress-fill {
+  background: linear-gradient(to right, #3b82f6, #1d4ed8);
+  box-shadow: 0 0 8px rgba(59, 130, 246, 0.4);
+}
+
+@media (min-width: 640px) {
+  .progress-bar:hover .progress-fill {
+    box-shadow: 0 0 10px rgba(59, 130, 246, 0.5);
+  }
+}
+
+/* Custom video controls */
+.video-controls-overlay {
+  background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.6) 50%, transparent 100%);
+  backdrop-filter: blur(10px);
+}
+
+/* Loading spinner */
+.loading-spinner {
+  border: 2px solid rgba(255,255,255,0.1);
+  border-top: 2px solid #3b82f6;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+  box-shadow: 0 0 15px rgba(59, 130, 246, 0.3);
+}
+
+@media (min-width: 640px) {
+  .loading-spinner {
+    border: 3px solid rgba(255,255,255,0.1);
+    border-top: 3px solid #3b82f6;
+    width: 50px;
+    height: 50px;
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+  }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Smooth transitions for all interactive elements */
+* {
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 200ms;
+}
+
+/* Enhanced focus states */
+input:focus, button:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.3);
+}
+
+@media (min-width: 640px) {
+  input:focus, button:focus {
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3);
+  }
+}
+
+/* Glass morphism effect */
+.glass {
+  background: rgba(31, 41, 55, 0.8);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(75, 85, 99, 0.3);
+}
+
+/* Gradient text effect */
+.gradient-text {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Pulse animation for live indicators */
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Floating animation for buttons */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-2px);
+  }
+}
+
+.float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Enhanced shadows */
+.shadow-glow {
+  box-shadow: 0 0 15px rgba(59, 130, 246, 0.3);
+}
+
+@media (min-width: 640px) {
+  .shadow-glow {
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+  }
+}
+
+.shadow-glow:hover {
+  box-shadow: 0 0 25px rgba(59, 130, 246, 0.5);
+}
+
+@media (min-width: 640px) {
+  .shadow-glow:hover {
+    box-shadow: 0 0 30px rgba(59, 130, 246, 0.5);
+  }
+}
+
+/* Responsive text sizing */
+@media (max-width: 640px) {
+  .text-responsive {
+    font-size: 0.875rem;
+  }
+}
+
+@media (min-width: 641px) {
+  .text-responsive {
+    font-size: 1rem;
+  }
+}
+
+/* Custom button hover effects */
+.btn-modern {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-modern::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.btn-modern:hover::before {
+  left: 100%;
+}
+
+/* Message bubble animation */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.message-bubble {
+  animation: slideIn 0.3s ease-out;
+}
+
+/* Enhanced video controls */
+.video-controls-enhanced {
+  background: linear-gradient(to top, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.7) 50%, transparent 100%);
+  backdrop-filter: blur(15px);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Custom input styling */
+.input-modern {
+  background: rgba(55, 65, 81, 0.8);
+  border: 1px solid rgba(75, 85, 99, 0.5);
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+.input-modern:focus {
+  background: rgba(55, 65, 81, 0.9);
+  border-color: rgba(59, 130, 246, 0.8);
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
+}
+
+@media (min-width: 640px) {
+  .input-modern:focus {
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+  }
+}
+
+/* Status indicator animations */
+.status-indicator {
+  position: relative;
+}
+
+.status-indicator::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  background: inherit;
+  border-radius: inherit;
+  transform: translate(-50%, -50%);
+  animation: ping 1.5s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+@keyframes ping {
+  75%, 100% {
+    transform: translate(-50%, -50%) scale(2);
+    opacity: 0;
+  }
+}
+
+/* Mobile-specific optimizations */
+@media (max-width: 640px) {
+  /* Reduce touch targets for mobile */
+  button {
+    min-height: 44px;
+  }
+  
+  /* Improve text readability on small screens */
+  .text-xs {
+    font-size: 0.75rem;
+    line-height: 1rem;
+  }
+  
+  /* Optimize spacing for mobile */
+  .space-y-3 > * + * {
+    margin-top: 0.75rem;
+  }
+  
+  /* Better touch targets for video controls */
+  .video-controls button {
+    min-width: 44px;
+    min-height: 44px;
+  }
+}
+
+/* Tablet optimizations */
+@media (min-width: 641px) and (max-width: 1024px) {
+  /* Medium touch targets for tablets */
+  button {
+    min-height: 40px;
+  }
+  
+  /* Balanced spacing for tablets */
+  .space-y-4 > * + * {
+    margin-top: 1rem;
+  }
+}
+
+/* Desktop enhancements */
+@media (min-width: 1025px) {
+  /* Larger hover areas for desktop */
+  button:hover {
+    transform: scale(1.05);
+  }
+  
+  /* Enhanced shadows for desktop */
+  .shadow-xl {
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  }
+} 
